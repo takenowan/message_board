@@ -48,10 +48,6 @@ public class DestroyServlet extends HttpServlet {
 
             // indexページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/index");
-            em.getTransaction().begin();
-            em.remove(m);       // データ削除
-            em.getTransaction().commit();
-            request.getSession().setAttribute("flush", "削除が完了しました。");       // ここを追記
-            em.close(); }
+        }
     }
 }
