@@ -15,23 +15,25 @@ import javax.servlet.http.HttpServletResponse;
 import models.Message;
 import models.validators.MessageValidator;
 import utils.DBUtil;
+
 /**
  * Servlet implementation class CreateServlet
  */
 @WebServlet("/create")
 public class CreateServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
     public CreateServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())) {
